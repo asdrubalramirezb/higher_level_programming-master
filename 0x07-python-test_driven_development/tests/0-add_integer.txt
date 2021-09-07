@@ -1,0 +1,64 @@
+===========================
+How to use ``0-add_integer.py``
+===========================
+
+
+Using ``add_integer``
+---------------------
+
+Operations
+==========
+add_integer() returns the sum of its arguments. For number, that value is equivalent to using the "+" operator.
+
+1) Import File:
+	>>> add_integer = __import__('0-add_integer').add_integer
+
+2) Should return the sum of two integers:
+	>>> add_integer(1, 2)
+	3
+
+3) Should return the sum of two integers
+	>>> add_integer(10.0, 3)
+	13
+
+4) a Must be an integer
+	>>> add_integer("hi", 2)
+	Traceback (most recent call last):
+    	...
+	TypeError: a must be an integer
+
+5) b must be an integer
+	>>> add_integer(2, "o")
+	Traceback (most recent call last):
+    	...
+	TypeError: b must be an integer
+
+6) b is equal to 98 for default:
+	>>> add_integer(10)
+	108
+
+7) Should return sum of one `float` and one `int`:
+	>>> add_integer(1234.5, 1)
+	1235
+
+8) integer bytes
+	>>> add_integer(1000000000000000, 10)
+	1000000000000010
+
+9) Should return the sum with a negative integer:
+    >>> add_integer(-1, 99)
+    98
+
+10) Should raise OverFlowError if float is too big:
+
+    >>> add_integer(float('inf'), 1)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+11) Should not convert NaN to integer:
+
+    >>> add_integer(float('nan'), 1)
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
